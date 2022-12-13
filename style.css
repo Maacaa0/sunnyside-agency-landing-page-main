@@ -60,7 +60,7 @@ a {
     color: var(--White);
 }
 
-.header_link:hover {
+.header_link:hover, .header_link_mobile:hover {
     text-decoration: underline;
 }
 
@@ -244,7 +244,7 @@ main {
 }
 
 .design_article {
-    background-image: url(images/desktop/image-graphic-design.jpg);
+    background: url(images/desktop/image-graphic-design.jpg) top;
 }
 
 
@@ -256,7 +256,7 @@ main {
 }
 
 .photography_article {
-    background-image: url(images/desktop/image-photography.jpg);
+    background: url(images/desktop/image-photography.jpg) top;
 }
 
 .photography_text {
@@ -380,6 +380,23 @@ footer {
     transition: 150ms ease;
 }
 
+.scroll_btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    border-radius: 1.1rem;
+    background: var(--Yellow) url(images/arrow-up.png) center no-repeat;
+    background-size: 50%;
+    opacity: .9;
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    z-index: 100;
+    transition: opacity 300ms ease-in-out;
+}
 
 
 @media (max-width:850px) {
@@ -420,21 +437,30 @@ footer {
         font-size: 1.1rem;
     }
 
+    h2 {
+        font-size: 2.2rem;
+    }
+
     .design_text, .photography_text,.standout_article,.transform_article {
         max-width: unset;
         padding: 1rem .6rem;
-    }
-
-    .design_article {
-        background-image: url(images/mobile/image-graphic-design.jpg);
-    }
-
-    .photography_article {
-        background-image: url(images/mobile/image-photography.jpg);
     }
 
     h1 {
         font-size: 2.5rem;
         text-align: center;
     }
+
+    .scroll_btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: .6rem;
+    }
+
+}
+
+.hidden {
+    opacity: 0;
+    z-index: -10;
+    transition: 300ms ease-in-out;
 }
